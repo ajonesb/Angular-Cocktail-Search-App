@@ -1,0 +1,62 @@
+@import "../../style/variables";
+
+.container {
+  width: 80%;
+  margin: $margin 10%;
+  text-align: center;
+}
+
+.searchInput {
+  margin: 10px auto;
+  max-width: 300px;
+  text-align: center;
+  border: 0px;
+
+  .inputContainer[_ngcontent-c2] {
+    .placeholder.focus[_ngcontent-c2] {
+      font-size: 12px;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      color: white;
+    }
+  }
+}
+
+.advancedSearch {
+  margin: $margin;
+
+  .button-wrapper {
+    max-width: 300px;
+    text-align: center;
+    margin: 15px auto;
+  }
+  .radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    background: white;
+    padding: 10px;
+    margin-bottom: 33px;
+    border-radius: 27px;
+
+    & > * {
+      padding: $margin/2;
+    }
+  }
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+  align-content: space-around;
+
+  & > * {
+    width: 200px;
+    box-sizing: border-box;
+    margin: $margin;
+    cursor: pointer;
+  }
+}

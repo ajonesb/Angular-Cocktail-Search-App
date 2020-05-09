@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm-12 col-md-6 searchInput input-group input-group-sm mb-3">
+          <p>Type in desired cocktail and results will auto populate.</p>
+          <input
+            [(ngModel)]="search"
+            [placeholder]="'Search Cocktail'"
+            [(value)]="search"
+            (valueChange)="getValue($event)"
+            (keyup)="searchCocktail()"
+            class="form-control"
+            aria-label="Small"
+            aria-describedby="inputGroup-sizing-sm"
+          />
+        </div>
+
+        <div class="col-sm-12 col-md-6 advancedSearch" *ngIf="categoriesList.length > 0">
+            <p> Click on Advanced filter button to filter what you typed on Search Cocktail input.</p>
+          <div class="button-wrapper">
+            <rd-button (buttonClick)="advanced = !advanced">
+              Advanced Filters
+            </rd-button>
+          </div>
+        </div>
+  </div>
+  
+<div class="row">
+    <div class="col-md-12" *ngIf="advanced">
+        <rd-radio-button [color]="'white'" (valueChange)="chooseCategory($event)">
+          <div class="radio">
+            <rd-radio-button-option
+              *ngFor="let category of categoriesList"
+              [value]="category"
+            >
+              {{ category }}
+            </rd-radio-button-option>
+          </div>
+        </rd-radio-button>
+      </div>
+</div>
+  
+<div class="row">
+    <div class="col-md-12 results">
+        <div class="cocktailCard" *ngFor="let cocktail of getMatchingList()">
+          <app-cocktail-card
+            [name]="cocktail.name"
+            [image]="cocktail.image"
+            [id]="cocktail.id"
+            (click)="navigateToCocktail(cocktail.id)"
+          >
+          </app-cocktail-card>
+        </div>
+      </div>
+</div>
+
+</div>

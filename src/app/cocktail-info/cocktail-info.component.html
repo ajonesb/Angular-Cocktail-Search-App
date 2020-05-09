@@ -1,0 +1,104 @@
+<div class="cocktail" *ngIf="cocktail">
+  <div class="image">
+    <img [src]="cocktail.image" />
+  </div>
+  <div class="infos">
+    <div class="name">
+      {{ cocktail.name }}
+      <span class="type" [class.alcohol]="cocktail.alcohol">{{
+        cocktail.alcohol ? "Alcohol" : "Alcohol Free"
+      }}</span>
+    </div>
+    <div class="ingredients">
+      <table>
+        <tr>
+          <th>Ingredients</th>
+          <th colspan="2">Quantity</th>
+        </tr>
+        <tr *ngFor="let ingredient of cocktail.ingredients">
+          <td>{{ ingredient.name }}</td>
+          <td colspan="2">{{ ingredient.measure }}</td>
+        </tr>
+        <tr>
+          <th>Nutriment</th>
+          <th>Value</th>
+          <th>Daily Percentage</th>
+        </tr>
+        <tr>
+          <td>Calorie</td>
+          <td>{{ nutrition.calorie.toFixed(2) }}</td>
+          <td>
+            {{ ((nutrition.calorie / dailyValue.calorie) * 100).toFixed(1) }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Graisse Saturée</td>
+          <td>{{ nutrition.saturatedFat.toFixed(2) }}</td>
+          <td>
+            {{
+              (
+                (nutrition.saturatedFat / dailyValue.saturatedFat) *
+                100
+              ).toFixed(1)
+            }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Cholesterol</td>
+          <td>{{ nutrition.cholesterol.toFixed(2) }}</td>
+          <td>
+            {{
+              ((nutrition.cholesterol / dailyValue.cholesterol) * 100).toFixed(
+                1
+              )
+            }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Sodium</td>
+          <td>{{ nutrition.sodium.toFixed(2) }}</td>
+          <td>
+            {{ ((nutrition.sodium / dailyValue.sodium) * 100).toFixed(1) }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Potassium</td>
+          <td>{{ nutrition.potassium.toFixed(2) }}</td>
+          <td>
+            {{
+              ((nutrition.potassium / dailyValue.potassium) * 100).toFixed(1)
+            }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Sugar</td>
+          <td>{{ nutrition.sugar.toFixed(2) }}</td>
+          <td>
+            {{ ((nutrition.sugar / dailyValue.sugar) * 100).toFixed(1) }}%
+          </td>
+        </tr>
+        <tr>
+          <td>Protein</td>
+          <td>{{ nutrition.protein.toFixed(2) }}</td>
+          <td>
+            {{ ((nutrition.protein / dailyValue.protein) * 100).toFixed(1) }}%
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="related">
+  <div class="name">Associated cocktails</div>
+  <div class="relatedList">
+    <div class="cocktailCard" *ngFor="let cocktail of related">
+      <app-cocktail-card
+        [name]="cocktail.name"
+        [image]="cocktail.image"
+        [id]="cocktail.id"
+        (click)="navigateToCocktail(cocktail.id)"
+      >
+      </app-cocktail-card>
+    </div>
+  </div>
+</div>
