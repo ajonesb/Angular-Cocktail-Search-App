@@ -1,0 +1,34 @@
+@import "../style/variables";
+
+.header {
+  margin: 0;
+  text-transform: capitalize;
+  background: rgba(0, 0, 0, 0.3) none;
+  color: white;
+  padding: $header-margin;
+  position: relative;
+  box-shadow: $shadow;
+  animation: background-rotation 5s infinite linear alternate;
+  text-align: center;
+
+  .header-logo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 19px;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+
+
+}
+
+@keyframes background-rotation {
+  0% {background-position: 0 0}
+  100% {background-position: 100% 100%}
+}
