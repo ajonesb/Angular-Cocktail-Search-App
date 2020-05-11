@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 import { SearchCocktailComponent } from './search-cocktail/search-cocktail.component';
 import { CocktailInfoComponent } from './cocktail-info/cocktail-info.component';
 import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
@@ -17,10 +18,10 @@ import { CocktailCardComponent } from './cocktail-card/cocktail-card.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     SearchCocktailComponent,
     CocktailInfoComponent,
-    CocktailCardComponent,
-
+    CocktailCardComponent
   ],
   imports: [
     BrowserModule,

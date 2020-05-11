@@ -14,6 +14,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build --prod --base-href ./` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+- NOTE: You would not be able to view the index.html file on the dist folder. In order to view the content from the index.html, you must deploy to a server or install a server. 
+
+- In this case, I just deployed directly to my hosting all the files on the dist folder to a sub folder (jonesfronteenwebdev.com/sub-folder) 
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -21,6 +25,16 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+I have implemented some basic test functions with Protractor for the homepage.
+
+The same methods can be reused for other components as well to continue testing.
+
+To view the end-to-end functional testing please navigate to the following directories:
+
+e2e -> src -> app.e2e-spec.ts and app.po.ts
+
+
 
 ## Further help
 

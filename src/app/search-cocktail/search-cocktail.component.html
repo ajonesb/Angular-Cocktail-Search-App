@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <div class="col-sm-12 col-md-6 searchInput input-group input-group-sm mb-3">
-          <p>Type in desired cocktail and results will auto populate.</p>
+          <p class="search-input-description">Type in desired cocktail and results will auto populate.</p>
           <input
             [(ngModel)]="search"
             [placeholder]="'Search Cocktail'"
@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-sm-12 col-md-6 advancedSearch" *ngIf="categoriesList.length > 0">
-            <p> Click on Advanced filter button to filter what you typed on Search Cocktail input.</p>
+            <p class="advanced-btn-description"> Click on Advanced filter button to filter what you typed on Search Cocktail input.</p>
           <div class="button-wrapper">
             <rd-button (buttonClick)="advanced = !advanced">
               Advanced Filters
