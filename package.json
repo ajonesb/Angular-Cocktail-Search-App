@@ -25,7 +25,7 @@
     "express": "^4.16.4",
     "ngx-spinner": "^9.0.2",
     "node": "^10.14.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "roleden-component": "^1.4.0",
     "rxjs": "~6.3.3",
